@@ -19,20 +19,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "vlob-landing",
-    title: "VLOB Landing — Kids Coding Course",
+    id: "content-repurposer",
+    title: "Content Repurposer",
     description:
-      "High-conversion landing page for VLOB mini-course (HTML/CSS for kids 10-14, Ukrainian market). Lead capture via Telegram Bot API with 100% open rate for UA audience.",
+      "AI pipeline (YouTube → Blog → Twitter) using FastAPI + Celery + Redis. Async architecture with distributed task queue, retries, and result tracking.",
     image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop",
-    tags: ["Next.js 14", "TypeScript", "Telegram Bot", "Lead Gen"],
-    github: "https://github.com/Mykhailo-Zhuk/vlob-landing",
+      "https://images.unsplash.com/photo-1626814026160-2237a95fc5d5?w=1200&h=800&fit=crop",
+    tags: ["AI", "FastAPI", "Celery", "Redis", "Python"],
+    github: "https://github.com/Mykhailo-Zhuk/content-repurposer",
     demo: null,
     featured: true,
     metrics: [
-      { label: "Delivery", value: "5 days" },
-      { label: "Mobile-first", value: "Yes" },
-      { label: "i18n", value: "UA" },
+      { label: "Pipeline", value: "Async" },
+      { label: "Queue", value: "Celery+Redis" },
+      { label: "Stack", value: "Full-stack" },
     ],
   },
   {
