@@ -70,20 +70,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "bookhub",
-    title: "BookHub — Supabase E-commerce",
+    id: "agent-hub",
+    title: "Agent Hub",
     description:
-      "Full-stack e-commerce with cart, checkout, admin panel. PostgreSQL via Supabase with PL/pgSQL stored procedures. Compact 121KB codebase, production-deployed on Vercel.",
+      "Multi-agent AI platform with MCP server, CLI, REST API, NextAuth, PWA. Hub-and-spoke architecture where individual services (like BookHub) become integrated modules.",
     image:
-      "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=1200&h=800&fit=crop",
-    tags: ["Next.js", "Supabase", "PostgreSQL", "PL/pgSQL", "E-commerce"],
-    github: null,
-    demo: "https://bookhub-new.vercel.app",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
+    tags: ["AI", "Multi-agent", "MCP", "NextAuth", "PWA", "TypeScript"],
+    github: "https://github.com/Mykhailo-Zhuk/agent-hub",
+    demo: null,
     featured: true,
     metrics: [
-      { label: "DB", value: "Supabase" },
-      { label: "Storage", value: "PL/pgSQL" },
-      { label: "Status", value: "Live" },
+      { label: "Surfaces", value: "PWA+CLI+REST+MCP" },
+      { label: "Auth", value: "NextAuth" },
+      { label: "AI", value: "Multi-agent" },
     ],
   },
 ];
