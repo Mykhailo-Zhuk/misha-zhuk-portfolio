@@ -25,6 +25,24 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    const id = href.replace(/^#/, "");
+    const el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    setMobileOpen(false);
+    // Account for fixed nav (h-16 = 4rem)
+    const top = el.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({ top, behavior: "smooth" });
+    // Update URL hash without triggering default jump
+    if (window.history && window.history.pushState) {
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -50,6 +68,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
@@ -61,6 +80,7 @@ export function Nav() {
           <ThemeToggle />
           <a
             href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
             className="hidden rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-background transition-transform hover:scale-[1.02] sm:inline-block"
           >
             Hire me
@@ -108,7 +128,7 @@ export function Nav() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {link.label}
@@ -116,7 +136,7 @@ export function Nav() {
               ))}
               <a
                 href="#contact"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => handleNavClick(e, "#contact")}
                 className="mt-2 rounded-full bg-foreground px-4 py-2 text-center text-sm font-medium text-background"
               >
                 Hire me
