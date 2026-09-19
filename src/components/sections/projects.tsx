@@ -20,7 +20,7 @@ export function Projects() {
           </h2>
           <div className="mt-2 h-1 w-12 rounded-full bg-gradient-to-r from-[#7C5CFC] to-[#5B9CFF]" />
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            5 hand-picked case studies from 67+ shipped projects. Each one
+            6 hand-picked case studies from 67+ shipped projects. Each one
             represents a different domain and a reusable pattern.
           </p>
         </Reveal>

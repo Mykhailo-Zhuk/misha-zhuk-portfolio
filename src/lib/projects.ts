@@ -86,4 +86,21 @@ export const projects: Project[] = [
       { label: "Form", value: "Google-style" },
     ],
   },
+  {
+    id: "client-hub",
+    title: "Client Hub — Project Portal",
+    description:
+      "Public dashboard + per-client magic-link portal + agent console for project tracking. Real-time updates, comments, statistics with charts. Built for transparency between dev and client.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
+    tags: ["Next.js", "SaaS", "Portal", "Magic Link", "Charts"],
+    github: "https://github.com/Mykhailo-Zhuk/client-hub",
+    demo: "https://temporary-brisk-crimson-sd1r9ww.vercel.app",
+    featured: true,
+    metrics: [
+      { label: "Auth", value: "Magic-link" },
+      { label: "Console", value: "Agent UI" },
+      { label: "Updates", value: "Real-time" },
+    ],
+  },
 ];
