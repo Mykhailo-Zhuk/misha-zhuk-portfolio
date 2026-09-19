@@ -43,9 +43,8 @@ const contactMethods: ContactMethod[] = [
     label: "GitHub",
     value: "@Mykhailo-Zhuk",
     href: "https://github.com/Mykhailo-Zhuk",
-    accent: "from-gray-700 to-gray-900 dark:from-gray-300 dark:to-gray-100",
-    // Light mode gradient is dark → white icon. Dark mode gradient is light → black icon.
-    iconColor: "text-white dark:text-gray-900",
+    accent: "from-[#24292e] to-[#0d1117]",
+    iconColor: "text-white",
   },
   {
     icon: <Send className="h-5 w-5" />,
@@ -84,9 +83,8 @@ const contactMethods: ContactMethod[] = [
     label: "Twitter / X",
     value: "@Mykhailo_Zhuk",
     href: "https://x.com/Mykhailo_Zhuk",
-    accent: "from-gray-900 to-black dark:from-gray-100 dark:to-white",
-    // Light mode gradient is dark → white icon. Dark mode gradient is light → black icon.
-    iconColor: "text-white dark:text-gray-900",
+    accent: "from-black to-[#1a1a1a]",
+    iconColor: "text-white",
   },
   {
     icon: <Calendar className="h-5 w-5" />,
