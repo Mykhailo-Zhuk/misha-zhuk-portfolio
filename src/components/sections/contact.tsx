@@ -1,10 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Github, Mail, Send, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  Mail,
+  Send,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Phone,
+  Calendar,
+  MessageSquare,
+  Copy,
+  Check,
+} from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 
-const contactMethods = [
+type ContactMethod = {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href?: string;
+  copyable?: boolean;
+  accent: string;
+};
+
+const contactMethods: ContactMethod[] = [
   {
     icon: <Mail className="h-5 w-5" />,
     label: "Email",
@@ -26,9 +49,56 @@ const contactMethods = [
     href: "https://t.me/Zhuk_Mykhailo",
     accent: "from-cyan-400 to-blue-500",
   },
+  {
+    icon: <Linkedin className="h-5 w-5" />,
+    label: "LinkedIn",
+    value: "mykhailo-zhuk-8720a8203",
+    href: "https://www.linkedin.com/in/mykhailo-zhuk-8720a8203/",
+    accent: "from-[#0A66C2] to-[#004182]",
+  },
+  {
+    icon: <MessageSquare className="h-5 w-5" />,
+    label: "Discord",
+    value: "zhuk_mykhailo",
+    copyable: true,
+    accent: "from-[#5865F2] to-[#404EED]",
+  },
+  {
+    icon: <Phone className="h-5 w-5" />,
+    label: "WhatsApp",
+    value: "+380 67 496 6309",
+    href: "https://wa.me/380674966309",
+    accent: "from-[#25D366] to-[#128C7E]",
+  },
+  {
+    icon: <Twitter className="h-5 w-5" />,
+    label: "Twitter / X",
+    value: "@Mykhailo_Zhuk",
+    href: "https://x.com/Mykhailo_Zhuk",
+    accent: "from-gray-900 to-black dark:from-gray-100 dark:to-white",
+  },
+  {
+    icon: <Calendar className="h-5 w-5" />,
+    label: "Calendly",
+    value: "mzhuk-gth",
+    href: "https://calendly.com/mzhuk-gth",
+    accent: "from-[#006BFF] to-[#00A2FF]",
+  },
 ];
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async (value: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // Fallback: no-op; copy UI will not flip but link is still usable.
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -77,31 +147,76 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div className="mt-12 grid gap-3 sm:grid-cols-3">
-            {contactMethods.map((method) => (
-              <Link
-                key={method.label}
-                href={method.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-foreground/20 hover:bg-card/80"
-              >
-                <div
-                  className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${method.accent} text-white shadow-sm`}
+          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {contactMethods.map((method) => {
+              const inner = (
+                <>
+                  <div
+                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${method.accent} text-white shadow-sm`}
+                  >
+                    {method.icon}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-xs text-muted-foreground">
+                      {method.label}
+                    </div>
+                    <div className="truncate text-sm font-medium">
+                      {method.value}
+                    </div>
+                  </div>
+                  {method.copyable && (
+                    <span
+                      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors group-hover:border-foreground/30 group-hover:text-foreground"
+                      aria-hidden
+                    >
+                      {copied ? (
+                        <Check className="h-3.5 w-3.5" />
+                      ) : (
+                        <Copy className="h-3.5 w-3.5" />
+                      )}
+                    </span>
+                  )}
+                </>
+              );
+
+              const baseClass =
+                "group flex items-center gap-3 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-foreground/20 hover:bg-card/80";
+
+              if (method.href) {
+                return (
+                  <Link
+                    key={method.label}
+                    href={method.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={baseClass}
+                  >
+                    {inner}
+                  </Link>
+                );
+              }
+
+              return (
+                <button
+                  key={method.label}
+                  type="button"
+                  onClick={() => handleCopy(method.value)}
+                  className={baseClass}
+                  aria-label={`Copy ${method.label} handle: ${method.value}`}
                 >
-                  {method.icon}
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs text-muted-foreground">
-                    {method.label}
-                  </div>
-                  <div className="truncate text-sm font-medium">
-                    {method.value}
-                  </div>
-                </div>
-              </Link>
-            ))}
+                  {inner}
+                </button>
+              );
+            })}
           </div>
+          {copied && (
+            <div
+              role="status"
+              className="mt-3 text-xs text-muted-foreground"
+            >
+              Discord handle copied to clipboard
+            </div>
+          )}
         </Reveal>
 
         <Reveal delay={0.3}>
