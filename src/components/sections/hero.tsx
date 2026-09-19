@@ -72,7 +72,7 @@ export function Hero() {
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
-            href="mailto:misha@zhuk.dev"
+            href="mailto:mzhuk.gth@gmail.com"
             className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
           >
             <Mail className="h-4 w-4" />

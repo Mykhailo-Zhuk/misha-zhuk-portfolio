@@ -8,8 +8,8 @@ const contactMethods = [
   {
     icon: <Mail className="h-5 w-5" />,
     label: "Email",
-    value: "misha@zhuk.dev",
-    href: "mailto:misha@zhuk.dev",
+    value: "mzhuk.gth@gmail.com",
+    href: "mailto:mzhuk.gth@gmail.com",
     accent: "from-[#7C5CFC] to-[#5B9CFF]",
   },
   {
@@ -22,8 +22,8 @@ const contactMethods = [
   {
     icon: <Send className="h-5 w-5" />,
     label: "Telegram",
-    value: "@mzhuk",
-    href: "https://t.me/mzhuk",
+    value: "@Zhuk_Mykhailo",
+    href: "https://t.me/Zhuk_Mykhailo",
     accent: "from-cyan-400 to-blue-500",
   },
 ];
@@ -67,11 +67,11 @@ export function Contact() {
 
         <Reveal delay={0.1}>
           <Link
-            href="mailto:misha@zhuk.dev"
+            href="mailto:mzhuk.gth@gmail.com"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#7C5CFC] to-[#5B9CFF] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-[#7C5CFC]/20 transition-transform hover:scale-[1.03]"
           >
             <Mail className="h-4 w-4" />
-            misha@zhuk.dev
+            mzhuk.gth@gmail.com
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>

@@ -22,14 +22,14 @@ export function Footer() {
             <Github className="h-4.5 w-4.5" />
           </Link>
           <Link
-            href="mailto:misha@zhuk.dev"
+            href="mailto:mzhuk.gth@gmail.com"
             className="transition-colors hover:text-foreground"
             aria-label="Email"
           >
             <Mail className="h-4.5 w-4.5" />
           </Link>
           <Link
-            href="https://t.me/mzhuk"
+            href="https://t.me/Zhuk_Mykhailo"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-foreground"
