@@ -25,6 +25,8 @@ type ContactMethod = {
   href?: string;
   copyable?: boolean;
   accent: string;
+  /** Color of the icon sitting on top of the accent gradient. */
+  iconColor: string;
 };
 
 const contactMethods: ContactMethod[] = [
@@ -34,6 +36,7 @@ const contactMethods: ContactMethod[] = [
     value: "mzhuk.gth@gmail.com",
     href: "mailto:mzhuk.gth@gmail.com",
     accent: "from-[#7C5CFC] to-[#5B9CFF]",
+    iconColor: "text-white",
   },
   {
     icon: <Github className="h-5 w-5" />,
@@ -41,6 +44,8 @@ const contactMethods: ContactMethod[] = [
     value: "@Mykhailo-Zhuk",
     href: "https://github.com/Mykhailo-Zhuk",
     accent: "from-gray-700 to-gray-900 dark:from-gray-300 dark:to-gray-100",
+    // Light mode gradient is dark → white icon. Dark mode gradient is light → black icon.
+    iconColor: "text-white dark:text-gray-900",
   },
   {
     icon: <Send className="h-5 w-5" />,
@@ -48,6 +53,7 @@ const contactMethods: ContactMethod[] = [
     value: "@Zhuk_Mykhailo",
     href: "https://t.me/Zhuk_Mykhailo",
     accent: "from-cyan-400 to-blue-500",
+    iconColor: "text-white",
   },
   {
     icon: <Linkedin className="h-5 w-5" />,
@@ -55,6 +61,7 @@ const contactMethods: ContactMethod[] = [
     value: "mykhailo-zhuk-8720a8203",
     href: "https://www.linkedin.com/in/mykhailo-zhuk-8720a8203/",
     accent: "from-[#0A66C2] to-[#004182]",
+    iconColor: "text-white",
   },
   {
     icon: <MessageSquare className="h-5 w-5" />,
@@ -62,6 +69,7 @@ const contactMethods: ContactMethod[] = [
     value: "zhuk_mykhailo",
     copyable: true,
     accent: "from-[#5865F2] to-[#404EED]",
+    iconColor: "text-white",
   },
   {
     icon: <Phone className="h-5 w-5" />,
@@ -69,6 +77,7 @@ const contactMethods: ContactMethod[] = [
     value: "+380 67 496 6309",
     href: "https://wa.me/380674966309",
     accent: "from-[#25D366] to-[#128C7E]",
+    iconColor: "text-white",
   },
   {
     icon: <Twitter className="h-5 w-5" />,
@@ -76,6 +85,8 @@ const contactMethods: ContactMethod[] = [
     value: "@Mykhailo_Zhuk",
     href: "https://x.com/Mykhailo_Zhuk",
     accent: "from-gray-900 to-black dark:from-gray-100 dark:to-white",
+    // Light mode gradient is dark → white icon. Dark mode gradient is light → black icon.
+    iconColor: "text-white dark:text-gray-900",
   },
   {
     icon: <Calendar className="h-5 w-5" />,
@@ -83,6 +94,7 @@ const contactMethods: ContactMethod[] = [
     value: "mzhuk-gth",
     href: "https://calendly.com/mzhuk-gth",
     accent: "from-[#006BFF] to-[#00A2FF]",
+    iconColor: "text-white",
   },
 ];
 
@@ -152,7 +164,7 @@ export function Contact() {
               const inner = (
                 <>
                   <div
-                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${method.accent} text-white shadow-sm`}
+                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${method.accent} shadow-sm ${method.iconColor}`}
                   >
                     {method.icon}
                   </div>

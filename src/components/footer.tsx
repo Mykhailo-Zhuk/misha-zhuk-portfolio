@@ -1,13 +1,34 @@
 import Link from "next/link";
 import { Github, Mail, Send, Linkedin, Phone, Calendar, MessageSquare, Twitter } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const footerLinks = [
-  { href: "https://github.com/Mykhailo-Zhuk", label: "GitHub", icon: Github },
+type FooterLink = {
+  href: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  /** Optional classes applied to the <Icon /> itself, useful for brand colors. */
+  iconClassName?: string;
+};
+
+const footerLinks: FooterLink[] = [
+  // Brand colors stay vivid in any theme; contrast is enforced by Tailwind variants.
+  {
+    href: "https://github.com/Mykhailo-Zhuk",
+    label: "GitHub",
+    icon: Github,
+    iconClassName: "text-[#181717] dark:text-white",
+  },
   { href: "mailto:mzhuk.gth@gmail.com", label: "Email", icon: Mail },
   { href: "https://t.me/Zhuk_Mykhailo", label: "Telegram", icon: Send },
   { href: "https://www.linkedin.com/in/mykhailo-zhuk-8720a8203/", label: "LinkedIn", icon: Linkedin },
   { href: "https://wa.me/380674966309", label: "WhatsApp", icon: Phone },
-  { href: "https://x.com/Mykhailo_Zhuk", label: "Twitter / X", icon: Twitter },
+  // Twitter/X brand blue reads well on both light and dark backgrounds.
+  {
+    href: "https://x.com/Mykhailo_Zhuk",
+    label: "Twitter / X",
+    icon: Twitter,
+    iconClassName: "text-[#1DA1F2]",
+  },
   { href: "https://calendly.com/mzhuk-gth", label: "Calendly", icon: Calendar },
 ];
 
@@ -27,7 +48,7 @@ export function Footer() {
           <span>© {new Date().getFullYear()} Mykhailo Zhuk</span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          {footerLinks.map(({ href, label, icon: Icon }) => (
+          {footerLinks.map(({ href, label, icon: Icon, iconClassName }) => (
             <Link
               key={label}
               href={href}
@@ -37,7 +58,10 @@ export function Footer() {
               aria-label={label}
               title={label}
             >
-              <Icon className="h-4.5 w-4.5" />
+              {/* Brand-colored icons override the parent's text color so they
+                  stay visible in both light and dark mode. Other icons inherit
+                  text-muted-foreground → text-foreground on hover. */}
+              <Icon className={cn("h-4.5 w-4.5", iconClassName)} />
             </Link>
           ))}
           {footerBadges.map(({ label, icon: Icon }) => (
