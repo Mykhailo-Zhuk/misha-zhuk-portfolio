@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
+    <section id="hero" className="relative overflow-hidden border-b border-border">
       {/* Gradient mesh background */}
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-30 dark:opacity-40"

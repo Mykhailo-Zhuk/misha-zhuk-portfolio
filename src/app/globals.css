@@ -32,6 +32,11 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    /* offset for fixed nav (h-16 = 4rem) so anchors don't land under it */
+    scroll-padding-top: 5rem;
+  }
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
