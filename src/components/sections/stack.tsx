@@ -39,7 +39,7 @@ const stackGroups: StackGroup[] = [
       "lucide-react",
       "React Hook Form",
       "Zod (runtime validation)",
-      "next-intl (i18n UA/EN/RU)",
+      "next-intl (i18n UA/EN)",
       "DaisyUI",
       "Embla Carousel",
       "qrcode.react",

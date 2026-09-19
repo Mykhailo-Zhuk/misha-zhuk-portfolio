@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: "universal-service-template",
     title: "Universal Service Template",
     description:
-      "Open-source SaaS template for restaurants, cafes, salons & local businesses. Production-ready with admin panel, Telegram bot, LiqPay payments, i18n (UA/EN/RU), and dark/light themes.",
+      "Open-source SaaS template for restaurants, cafes, salons & local businesses. Production-ready with admin panel, Telegram bot, LiqPay payments, i18n (UA/EN), and dark/light themes.",
     image:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
     tags: ["Next.js 14", "TypeScript", "Tailwind", "Supabase", "Telegram Bot", "MIT"],
@@ -19,20 +19,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "content-repurposer",
-    title: "Content Repurposer",
+    id: "mvp-spa-booking-website-canada",
+    title: "Spa Booking Website (Canada)",
     description:
-      "AI pipeline (YouTube → Blog → Twitter) using FastAPI + Celery + Redis. Async architecture with distributed task queue, retries, and result tracking.",
+      "MVP for a spa salon in Canada with booking system, services, gallery, and i18n localization. Built with Next.js 14, Zod runtime validation, and Tailwind CSS.",
     image:
-      "https://images.unsplash.com/photo-1626814026160-2237a95fc5d5?w=1200&h=800&fit=crop",
-    tags: ["AI", "FastAPI", "Celery", "Redis", "Python"],
-    github: "https://github.com/Mykhailo-Zhuk/content-repurposer",
-    demo: null,
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&h=800&fit=crop",
+    tags: ["Next.js", "Spa", "Booking", "i18n", "Tailwind"],
+    github: "https://github.com/Mykhailo-Zhuk/mvp-spa-booking-website-canada",
+    demo: "https://mvp-spa-booking-website-canada.vercel.app",
     featured: true,
     metrics: [
-      { label: "Pipeline", value: "Async" },
-      { label: "Queue", value: "Celery+Redis" },
-      { label: "Stack", value: "Full-stack" },
+      { label: "Market", value: "Canada" },
+      { label: "i18n", value: "UA/EN" },
+      { label: "Stack", value: "Next.js 14" },
     ],
   },
   {
@@ -53,37 +53,37 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "conference-ei",
-    title: "Conference European Integration",
+    id: "vlob-landing",
+    title: "VLOB Landing — Kids Coding Course",
     description:
-      "Corporate site for international conference with full i18n (UA/EN/PL). Program, speakers, registration — production-ready with 46K lines of TypeScript and Embla Carousel auto-scroll.",
+      "Landing page for a kids' programming school with Telegram bot integration, hero animations, and fully responsive design.",
     image:
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&h=800&fit=crop",
-    tags: ["Next.js 14", "TypeScript", "DaisyUI", "Embla Carousel", "i18n"],
-    github: null,
-    demo: "https://conference-ei.vercel.app",
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop",
+    tags: ["Next.js", "Landing", "Education", "Telegram Bot"],
+    github: "https://github.com/Mykhailo-Zhuk/vlob-landing",
+    demo: "https://vlob-landing.vercel.app",
     featured: true,
     metrics: [
-      { label: "Delivery", value: "14 days" },
-      { label: "Languages", value: "3" },
-      { label: "Production", value: "Live" },
+      { label: "Audience", value: "Kids + parents" },
+      { label: "Integration", value: "Telegram Bot" },
+      { label: "Delivery", value: "Fast MVP" },
     ],
   },
   {
-    id: "agent-hub",
-    title: "Agent Hub",
+    id: "mvp-iron-master",
+    title: "СТО IRON MASTER",
     description:
-      "Multi-agent AI platform with MCP server, CLI, REST API, NextAuth, PWA. Hub-and-spoke architecture where individual services (like BookHub) become integrated modules.",
+      "MVP for an auto-service (СТО) network with Google-style booking form, admin panel, and real-time bookings. Next.js 14 + Zod validation + Framer Motion animations.",
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
-    tags: ["AI", "Multi-agent", "MCP", "NextAuth", "PWA", "TypeScript"],
-    github: "https://github.com/Mykhailo-Zhuk/agent-hub",
-    demo: null,
+      "https://images.unsplash.com/photo-1486262715619-67b85d0b6d01?w=1200&h=800&fit=crop",
+    tags: ["Next.js", "SaaS", "Booking", "MVP", "Tailwind"],
+    github: "https://github.com/Mykhailo-Zhuk/mvp-iron-master",
+    demo: "https://mvp-iron-master.vercel.app",
     featured: true,
     metrics: [
-      { label: "Surfaces", value: "PWA+CLI+REST+MCP" },
-      { label: "Auth", value: "NextAuth" },
-      { label: "AI", value: "Multi-agent" },
+      { label: "Booking", value: "Real-time" },
+      { label: "Admin", value: "Full panel" },
+      { label: "Form", value: "Google-style" },
     ],
   },
 ];
