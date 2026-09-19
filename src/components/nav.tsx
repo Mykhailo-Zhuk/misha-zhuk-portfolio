@@ -6,6 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 
+// Fixed nav height offset (h-16 = 4rem = 64px). Used to compensate for the
+// fixed header so anchored sections are not hidden underneath it.
+const NAV_OFFSET = 64;
+
 const navLinks = [
   { href: "#hero", label: "Home" },
   { href: "#about", label: "About" },
@@ -29,15 +33,32 @@ export function Nav() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
+    // Always prevent the browser's default jump so we control the scroll
+    // (smooth + offset for fixed nav). Previously this lived AFTER an
+    // `if (!el) return;` guard, which silently fell back to the default
+    // anchor jump with no offset — appearing as "nav doesn't work".
+    e.preventDefault();
+
     const id = href.replace(/^#/, "");
     const el = document.getElementById(id);
-    if (!el) return;
-    e.preventDefault();
+
+    // Close mobile menu regardless of whether we found the target.
     setMobileOpen(false);
-    // Account for fixed nav (h-16 = 4rem)
-    const top = el.getBoundingClientRect().top + window.scrollY - 64;
+
+    if (!el) {
+      // Section not yet in DOM (e.g. very early click before sections
+      // hydrate). Still update the URL so refresh/back behaves correctly.
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, "", href);
+      }
+      return;
+    }
+
+    // Account for fixed nav (h-16 = 4rem).
+    const top = el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
     window.scrollTo({ top, behavior: "smooth" });
-    // Update URL hash without triggering default jump
+
+    // Update URL hash without triggering another default jump.
     if (window.history && window.history.pushState) {
       window.history.pushState(null, "", href);
     }
