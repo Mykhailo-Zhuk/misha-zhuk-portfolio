@@ -44,7 +44,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=1200&h=800&fit=crop",
     tags: ["React", "Vite", "TypeScript", "Tailwind v4", "framer-motion"],
     github: "https://github.com/Mykhailo-Zhuk/dropship-landing",
-    demo: null,
+    demo: "https://dropship-landing-theta.vercel.app/",
     featured: true,
     metrics: [
       { label: "Build", value: "Vite SPA" },
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     description:
       "MVP for an auto-service (СТО) network with Google-style booking form, admin panel, and real-time bookings. Next.js 14 + Zod validation + Framer Motion animations.",
     image:
-      "https://images.unsplash.com/photo-1486262715619-67b85d0b6d01?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=1200&h=800&fit=crop",
     tags: ["Next.js", "SaaS", "Booking", "MVP", "Tailwind"],
     github: "https://github.com/Mykhailo-Zhuk/mvp-iron-master",
     demo: "https://mvp-iron-master.vercel.app",
