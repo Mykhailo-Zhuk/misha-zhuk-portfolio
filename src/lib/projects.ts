@@ -95,7 +95,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
     tags: ["Next.js", "SaaS", "Portal", "Magic Link", "Charts"],
     github: "https://github.com/Mykhailo-Zhuk/client-hub",
-    demo: "https://temporary-brisk-crimson-sd1r9ww.vercel.app",
+    demo: "https://client-hub-inky-one.vercel.app/",
     featured: true,
     metrics: [
       { label: "Auth", value: "Magic-link" },
