@@ -46,8 +46,9 @@ export function Nav() {
       return;
     }
 
-    const top = el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
-    window.scrollTo({ top, behavior: "smooth" });
+    // Since we added scroll-mt-24 to sections, 
+    // we can use simple smooth scroll.
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
 
     if (window.history && window.history.pushState) {
       window.history.pushState(null, "", href);
@@ -57,7 +58,6 @@ export function Nav() {
       setMobileOpen(false);
     }, 300);
   };
-
   return (
     <header
       className={cn(
