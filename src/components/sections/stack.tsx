@@ -135,8 +135,8 @@ const highlights = [
 export function Stack() {
   return (
     <section
-      id="stack" className="scroll-mt-24"
-      className="relative overflow-hidden border-b border-border bg-background py-20 sm:py-28"
+      id="stack"
+      className="relative overflow-hidden border-b border-border bg-background py-20 sm:py-28 scroll-mt-24"
     >
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-30"
