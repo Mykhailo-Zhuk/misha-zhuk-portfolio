@@ -111,8 +111,8 @@ export function Contact() {
 
   return (
     <section
-      id="contact" className="scroll-mt-24"
-      className="relative overflow-hidden border-b border-border bg-background py-20 pb-12 sm:py-28 sm:pb-16"
+      id="contact"
+      className="relative overflow-hidden border-b border-border bg-background py-20 pb-12 sm:py-28 sm:pb-16 scroll-mt-24"
     >
       <div
         className="pointer-events-none absolute inset-0 -z-10 opacity-50"
