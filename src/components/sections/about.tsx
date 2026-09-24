@@ -29,12 +29,12 @@ export function About() {
           <div className="grid items-center gap-12 md:grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr]">
             <div className="relative mx-auto md:mx-0">
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#7C5CFC] to-[#5B9CFF] opacity-50 blur" />
-              <Image
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop&crop=face"
-                alt="Mykhailo Zhuk"
-                width={240}
-                height={240}
-                priority
+              <video
+                src="/videos/about-me.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="relative h-48 w-48 rounded-2xl object-cover shadow-lg md:h-60 md:w-60"
               />
             </div>

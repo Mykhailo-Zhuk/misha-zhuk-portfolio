@@ -33,35 +33,29 @@ export function Nav() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    // Always prevent the browser's default jump so we control the scroll
-    // (smooth + offset for fixed nav). Previously this lived AFTER an
-    // `if (!el) return;` guard, which silently fell back to the default
-    // anchor jump with no offset — appearing as "nav doesn't work".
     e.preventDefault();
 
     const id = href.replace(/^#/, "");
     const el = document.getElementById(id);
 
-    // Close mobile menu regardless of whether we found the target.
-    setMobileOpen(false);
-
     if (!el) {
-      // Section not yet in DOM (e.g. very early click before sections
-      // hydrate). Still update the URL so refresh/back behaves correctly.
       if (window.history && window.history.pushState) {
         window.history.pushState(null, "", href);
       }
+      setMobileOpen(false);
       return;
     }
 
-    // Account for fixed nav (h-16 = 4rem).
     const top = el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
     window.scrollTo({ top, behavior: "smooth" });
 
-    // Update URL hash without triggering another default jump.
     if (window.history && window.history.pushState) {
       window.history.pushState(null, "", href);
     }
+
+    setTimeout(() => {
+      setMobileOpen(false);
+    }, 300);
   };
 
   return (
