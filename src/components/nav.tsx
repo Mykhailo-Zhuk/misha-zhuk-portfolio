@@ -26,38 +26,18 @@ export function Nav() {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    e.preventDefault();
-
-    const id = href.replace(/^#/, "");
-    const el = document.getElementById(id);
-
-    if (!el) {
-      if (window.history && window.history.pushState) {
-        window.history.pushState(null, "", href);
-      }
-      setMobileOpen(false);
-      return;
-    }
-
-    // Since we added scroll-mt-24 to sections, 
-    // we can use simple smooth scroll.
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-
-    if (window.history && window.history.pushState) {
-      window.history.pushState(null, "", href);
-    }
-
-    setTimeout(() => {
-      setMobileOpen(false);
-    }, 300);
-  };
+    const handleNavClick = (
+      e: React.MouseEvent<HTMLAnchorElement>,
+      href: string
+    ) => {
+      // We let the browser handle the jump naturally via href="#id"
+      // The scroll-mt-24 in sections handles the header offset.
+    
+      // Just close the mobile menu after a short delay
+      setTimeout(() => {
+        setMobileOpen(false);
+      }, 150);
+    };
   return (
     <header
       className={cn(
