@@ -26,18 +26,17 @@ export function Nav() {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    const handleNavClick = (
-      e: React.MouseEvent<HTMLAnchorElement>,
-      href: string
-    ) => {
-      // We let the browser handle the jump naturally via href="#id"
-      // The scroll-mt-24 in sections handles the header offset.
-    
-      // Just close the mobile menu after a short delay
-      setTimeout(() => {
-        setMobileOpen(false);
-      }, 150);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    setTimeout(() => {
+      setMobileOpen(false);
+    }, 150);
+  };
   return (
     <header
       className={cn(
