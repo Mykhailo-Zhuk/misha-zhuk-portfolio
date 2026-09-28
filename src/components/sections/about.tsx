@@ -10,9 +10,7 @@ const stackBadges = [
   "Tailwind CSS",
   "PostgreSQL",
   "Supabase",
-  "Telegram Bot API",
-  "LiqPay",
-  "framer-motion",
+  "Motion",
   "Zod",
   "React Hook Form",
   "next-intl",
@@ -73,11 +71,12 @@ export function About() {
                     Universal Service Template
                   </a>{" "}
                   that lets me ship a new client project in 3-5 days instead of 2-3
-                  weeks. I integrate UA payment providers (LiqPay, MonoPay,
-                  Fondy, WayForPay) and Telegram Bot notifications out of the box.
+                  weeks. I integrate international & UA payment providers (Stripe,
+                  PayPal, LiqPay, MonoPay, Fondy, WayForPay) and multi-channel notifications
+                  (Telegram Bot, WhatsApp, Email) out of the box.
                 </p>
                 <p>
-                  I use AI-assisted tools (Claude Code, GPT-5) as a competitive
+                  I use AI-assisted tools (Claude Code, Codex, Antigravity) as a competitive
                   advantage — delivering production-grade work 2-3× faster than
                   average.
                 </p>

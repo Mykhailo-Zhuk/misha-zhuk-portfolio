@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: "universal-service-template",
     title: "Universal Service Template",
     description:
-      "Open-source SaaS template for restaurants, cafes, salons & local businesses. Production-ready with admin panel, Telegram bot, LiqPay payments, i18n (UA/EN), and dark/light themes.",
+      "Open-source SaaS template for restaurants, cafes, salons & local businesses. Production-ready with admin panel, multi-channel notifications (Telegram bot, WhatsApp, Email), Stripe & LiqPay payments, i18n (UA/EN), and dark/light themes.",
     image:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop",
     tags: ["Next.js 14", "TypeScript", "Tailwind", "Supabase", "Telegram Bot", "MIT"],
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     id: "dropship-landing",
     title: "Dropship Landing (MIST.UA)",
     description:
-      "Production-ready e-commerce landing template for drop-ship clothing stores. Hero, benefits, gallery, reviews, FAQ accordion, order form, payment provider stubs (LiqPay/Fondy/WayForPay).",
+      "Production-ready e-commerce landing template for drop-ship clothing stores. Hero, benefits, gallery, reviews, FAQ accordion, order form, payment provider stubs (Stripe/PayPal/LiqPay/Fondy/WayForPay).",
     image:
       "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=1200&h=800&fit=crop",
     tags: ["React", "Vite", "TypeScript", "Tailwind v4", "framer-motion"],

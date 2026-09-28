@@ -63,12 +63,13 @@ const stackGroups: StackGroup[] = [
     icon: <Brain className="h-5 w-5" />,
     accent: "from-[#7C5CFC] to-pink-500",
     items: [
-      "Claude Code (Sonnet/Opus)",
-      "OpenAI API (GPT-4/GPT-5)",
+      "Claude Code",
+      "Antigravity",
+      "OpenAI API",
+      "Gemini API",
       "Anthropic API",
       "Agent orchestration",
       "RAG patterns",
-      "Multi-model routing (Omniroute)",
     ],
   },
   {
