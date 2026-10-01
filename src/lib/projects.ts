@@ -66,22 +66,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "mvp-iron-master",
-    title: "СТО IRON MASTER",
-    description:
-      "MVP for an auto-service (СТО) network with Google-style booking form, admin panel, and real-time bookings. Next.js 14 + Zod validation + Framer Motion animations.",
-    image: "/images/main-page-sto-universal.png",
-    tags: ["Next.js", "SaaS", "Booking", "MVP", "Tailwind"],
-    github: "https://github.com/Mykhailo-Zhuk/mvp-iron-master",
-    demo: "https://mvp-iron-master.vercel.app",
-    featured: true,
-    metrics: [
-      { label: "Booking", value: "Real-time" },
-      { label: "Admin", value: "Full panel" },
-      { label: "Form", value: "Google-style" },
-    ],
-  },
-  {
     id: "client-hub",
     title: "Client Hub — Project Portal",
     description:
